@@ -91,3 +91,13 @@ b44f51607394   yourls    "docker-entrypoint.s…"   6 weeks ago   Up 13 days   0
 or
 [user@ ~]# docker exec -it url-management-mysql-1 /bin/bash
 ```
+
+### Step 3 - install yourls neccesairy plugins
+1. https://github.com/BstName/every-click-counts
+2. https://github.com/williambargent/YOURLS-Forward-Slash-In-Urls
+3. https://github.com/YOURLS/YOURLS/issues/2339#issuecomment-352127623
+4. https://github.com/vaughany/yourls-popular-clicks-extended
+5. https://github.com/seandrickson/YOURLS-Remove-the-Share-Function
+6. https://github.com/YOURLS/timezones
+7. https://github.com/GautamGupta/YOURLS-Import-Export
+
