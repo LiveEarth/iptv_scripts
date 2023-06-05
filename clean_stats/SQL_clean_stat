@@ -1,0 +1,3 @@
+use yourls;
+delete from yourls_log where user_agent like "curl%" or user_agent like "VLC%";
+delete from yourls_log where shorturl like "user1%" and ip_address not like "public-ip-for-user1";
