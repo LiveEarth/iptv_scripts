@@ -1,0 +1,2 @@
+use yourls;
+select url, title from yourls_url where keyword like "user1%";
