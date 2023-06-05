@@ -104,4 +104,5 @@ or
 
 ### The custom scripts
 
-#### 
+#### check-available-stream
+
