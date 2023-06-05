@@ -1,0 +1,2 @@
+use yourls;
+select keyword, title from yourls_url where keyword like "USER2%" order by title;
