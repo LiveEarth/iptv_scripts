@@ -106,7 +106,7 @@ or
 
 #### check-available-stream
 As the name of the script suggest, here the task is to check whether a tv channel is available or not.
-Let furst check the SQL data provided from DB:
+Let first check the SQL data provided from DB:
 ```
 MySQL [yourls]> select url, title from yourls_url where keyword like "user1%";
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+
