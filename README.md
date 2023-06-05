@@ -40,7 +40,8 @@ iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
 3. yourls
 4. mysql
 
-### Step 1 - prepare the docker containers
+### The steps :)
+#### Step 1 - prepare the docker containers
 I use this docker compose file to setup the containers
 ```shell
 #version: '3.1'
@@ -71,7 +72,7 @@ services:
       MYSQL_USER: yourls-db-username
       MYSQL_PASSWORD: yourls-db-password
 ```
-### Step 2 - configure access to mysql DB
+#### Step 2 - configure access to mysql DB
 From user where we want to access mysql db without ask for username and password, just create a file named `.my.cnf` with permission `-rw-r--r--` and content like this one:
 ```
 [client]
@@ -92,7 +93,7 @@ or
 [user@ ~]# docker exec -it url-management-mysql-1 /bin/bash
 ```
 
-### Step 3 - install yourls neccesairy plugins
+#### Step 3 - install yourls neccesairy plugins
 1. https://github.com/BstName/every-click-counts
 2. https://github.com/williambargent/YOURLS-Forward-Slash-In-Urls
 3. https://github.com/YOURLS/YOURLS/issues/2339#issuecomment-352127623
@@ -101,3 +102,6 @@ or
 6. https://github.com/YOURLS/timezones
 7. https://github.com/GautamGupta/YOURLS-Import-Export
 
+### The custom scripts
+
+#### 
