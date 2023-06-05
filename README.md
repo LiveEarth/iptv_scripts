@@ -105,4 +105,24 @@ or
 ### The custom scripts
 
 #### check-available-stream
+As the name of the script suggest, here the task is to check whether a tv channel is available or not.
+Let furst check the SQL data provided from DB:
+```
+MySQL [yourls]> select url, title from yourls_url where keyword like "user1%";
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+
+| url                                                                                                                                                 | title                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+
+| http://83.228.88.114:8***/play/a***                                                                                                                 | BNT1                            |
+| http://83.228.88.114:8***/play/a***                                                                                                                 | BNT2                            |
+| http://83.228.88.114:8***/play/a***                                                                                                                 | BNT3                            |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+
+```
+From this data we get stream URLs and check each of them with ffprobe. If stream is available ok, check next one from list. If stream is not available send Telegram notification to prefered chat_id for monitoring purpose.
 
+#### clean_stats
+
+#### create_playlist
+
+#### import_playlist
+
+#### rotate-user-pass
