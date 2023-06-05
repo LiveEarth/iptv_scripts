@@ -8,7 +8,7 @@ In this article I will share one of probably many answers of question - how we c
 ### The BIG picture in my head :)
 ```
 iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
-^-(1)			  ^-(2)						^-(3)			^-(4)
+^-(1)            ^-(2)                      `^-(3)         ^-(4)
 ```
 
 (1) The Mag iptv STB make request to static iptv playlist (this playlist will not be changed in future) like this one:
