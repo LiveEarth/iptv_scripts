@@ -1,0 +1,2 @@
+use yourls;
+select keyword, title from yourls_url where keyword not like "USER1%" order by title;
