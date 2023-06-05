@@ -1,0 +1,2 @@
+use yourls;
+select * from yourls_log where click_time >= DATE_SUB(NOW(), INTERVAL 1 minute);
