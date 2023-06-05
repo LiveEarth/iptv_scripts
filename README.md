@@ -6,8 +6,10 @@ Lets imagine that we have an iptv device similar like [this one](https://www.inf
 In this article I will share one of probably many answers of question - how we can use static iptv playlist with dynamicly changed channel source into it.
 
 ### The BIG picture in my head :)
-    iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
-    ^-(1)			  ^-(2)						^-(3)			^-(4)
+```
+iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
+^-(1)			  ^-(2)						^-(3)			^-(4)
+```
 
 (1) The Mag iptv STB make request to static iptv playlist (this playlist will not be changed in future) like this one:
 
