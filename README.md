@@ -7,10 +7,11 @@ In this article I will share one of probably many answers of question - how we c
 
 ### The BIG picture in my head :)
     iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
-    ^-(1)			  ^-(2)									^-(3)			^-(4)
+    ^-(1)			  ^-(2)						^-(3)			^-(4)
 
 (1) The Mag iptv STB make request to static iptv playlist (this playlist will not be changed in future) like this one:
-    #EXTM3U
+
+```    #EXTM3U
     #EXTINF:-1,24kitchen
     http://myiptv.exampledns.org/user1/24kitchen
     #EXTINF:-1,Action Box
@@ -23,6 +24,7 @@ In this article I will share one of probably many answers of question - how we c
     http://myiptv.exampledns.org/user2/bnt2
     #EXTINF:-1,BNT3
     http://myiptv.exampledns.org/user2/bnt3
+```
 
 (2) Because the VM where is installed yourls Control Pannel have dinamic public ip address association, I use free DDNS services. If public ip adress on the VM will be changed in future I can change it on DDNS control pannel without change the saved iptv playlist on STB device.
 
