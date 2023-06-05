@@ -37,8 +37,10 @@ iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
 ### The requirement software
 1. On Premise or Cloud server
 2. docker compose
+3. yourls
+4. mysql
 
-### Step 1 - prepare docker containers
+### Step 1 - prepare the docker containers
 I use this docker compose file to setup the containers
 ```shell
 #version: '3.1'
@@ -68,4 +70,24 @@ services:
       MYSQL_DATABASE: yourls-db-name
       MYSQL_USER: yourls-db-username
       MYSQL_PASSWORD: yourls-db-password
+```
+### Step 2 - configure access to mysql DB
+From user where we want to access mysql db without ask for username and password, just create a file named `.my.cnf` with permission `-rw-r--r--` and content like this one:
+```
+[client]
+user=root
+password=toor
+host=127.0.0.1
+port=3306
+```
+To access container shell you can use this commands:
+```
+[user@ ~]# docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS       PORTS                                                    NAMES
+b44f51607394   yourls    "docker-entrypoint.s…"   6 weeks ago   Up 13 days   0.0.0.0:80->80/tcp, :::80->80/tcp                        url-management-yourls-1
+2219a5650b73   mysql     "docker-entrypoint.s…"   8 weeks ago   Up 7 hours   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp                url-management-mysql-1
+
+[user@ ~]# docker exec -it url-management-yourls-1 /bin/bash
+or
+[user@ ~]# docker exec -it url-management-mysql-1 /bin/bash
 ```
