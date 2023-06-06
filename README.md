@@ -39,6 +39,7 @@ iptv client ---> myiptv.exampledns.org ---> yourls CP ---> iptv stream
 2. docker compose
 3. yourls
 4. mysql
+5. ffprobe
 
 ### The steps :)
 #### Step 1 - prepare the docker containers
@@ -94,13 +95,13 @@ or
 ```
 
 #### Step 3 - install yourls neccesairy plugins
-1. https://github.com/BstName/every-click-counts
-2. https://github.com/williambargent/YOURLS-Forward-Slash-In-Urls
-3. https://github.com/YOURLS/YOURLS/issues/2339#issuecomment-352127623
-4. https://github.com/vaughany/yourls-popular-clicks-extended
-5. https://github.com/seandrickson/YOURLS-Remove-the-Share-Function
-6. https://github.com/YOURLS/timezones
-7. https://github.com/GautamGupta/YOURLS-Import-Export
+1. https://github.com/BstName/every-click-counts - To count every request from iptv STB to channel stream.
+2. https://github.com/williambargent/YOURLS-Forward-Slash-In-Urls - To allow forward slash in short links. This is usefull when we want to separate different groups in channels. For example http://myiptv.exampledns.org/user1/bnt1 and http://myiptv.exampledns.org/user2/bnt1 .
+3. https://github.com/YOURLS/YOURLS/issues/2339#issuecomment-352127623 - To allow more rows on one page in list of short urls.
+4. https://github.com/vaughany/yourls-popular-clicks-extended - To get group statictics for channels stream access for different time period (1 day, 7 days, 30 days, 1 year)
+5. https://github.com/seandrickson/YOURLS-Remove-the-Share-Function - To remove unused share function for each short link (for channel stream)
+6. https://github.com/YOURLS/timezones - If time zone on VM are different from preffered timezone you can use this plugin to correct time on web interface statistics. On DB records the timezone are get from OS (vm configuration)
+7. https://github.com/GautamGupta/YOURLS-Import-Export - To be able to export channel list, edit it and import again in DB witout access to DB (from web GUI only)
 
 ### The custom scripts
 
