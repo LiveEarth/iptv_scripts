@@ -25,7 +25,7 @@ if [[ $countaccounts -gt 10 ]]
     yes |cp -f /root/URL-management/scripts/rotate-user-pass/accounts_bkp $accounts
 fi
 
-# Get channels from playlist and import it on indexed key/value array with name "channels"
+# Get username and password from DB for configured short links and import it on indexed key/value array with name "channels"
 declare -A srvcredentials
 
 while IFS='' read -r line ; do
@@ -36,7 +36,7 @@ while IFS='' read -r line ; do
     srvurl=$(echo $line|cut -f 1 -d'?'|sed 's/\/get.php//g')
     srvcredentials["$srvusername"]="$srvpassword"
 done < $accounts
-
+# Check for local activity. If there is interruption for less than 1 min go to next steps, if no exit from execution
 getlocaluserstatus=$(mysql -N < $sqlgetuseractivity)
 [[ -z "$getlocaluserstatus" ]] && { echo "No local user activity. Goodbye!"; exit 0; }
 
