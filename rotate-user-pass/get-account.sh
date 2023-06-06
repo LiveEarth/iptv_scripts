@@ -36,7 +36,7 @@ while IFS='' read -r line ; do
     srvurl=$(echo $line|cut -f 1 -d'?'|sed 's/\/get.php//g')
     srvcredentials["$srvusername"]="$srvpassword"
 done < $accounts
-# Check for local activity. If there is interruption for less than 1 min go to next steps, if no exit from execution
+# Check for local activity. If there is interruption in stream (the STB will make request and this will be logged in logs) for less than 1 min go to next steps, if no exit from execution
 getlocaluserstatus=$(mysql -N < $sqlgetuseractivity)
 [[ -z "$getlocaluserstatus" ]] && { echo "No local user activity. Goodbye!"; exit 0; }
 
