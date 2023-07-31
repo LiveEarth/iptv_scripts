@@ -1,0 +1,19 @@
+1. Install Samba on the server
+2. Make following samba configuration on the server
+========
+unix charset = UTF-8
+[Share]
+    # shared directory
+    path = /Movies
+    # writable
+    writable = yes
+    # guest OK
+    guest ok = yes
+    # guest only
+    guest only = yes
+    # fully accessed
+    create mode = 0777
+    # fully accessed
+    directory mode = 0777
+========
+3. Restart Samba service: systemctl restart smbd
